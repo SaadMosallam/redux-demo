@@ -1,10 +1,6 @@
 const redux = require("redux");
 const createStore = redux.createStore;
 
-// internal store implementation
-const internalRedux = require("./internalRedux");
-const internalCreateStore = internalRedux.internalCreateStore;
-
 // action creator
 const BUY_CAKE = "BUY_CAKE";
 
@@ -44,14 +40,3 @@ store.dispatch(buyCake());
 store.dispatch(buyCake());
 unsubscribe();
 store.dispatch(buyCake());
-
-// internal
-const internalStore = internalCreateStore(reducer);
-console.log("Initial internal Store State", internalStore.getState());
-const internalUnsubscribe = internalStore.subscribe((state) =>
-  console.log("updated internal Store state", state)
-);
-internalStore.dispatch(buyCake());
-internalStore.dispatch(buyCake());
-internalUnsubscribe();
-internalStore.dispatch(buyCake());
