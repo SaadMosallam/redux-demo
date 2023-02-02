@@ -1,3 +1,3 @@
 ## Redux Demo
 
-A repo to review and test all basic redux functionality without react
+A repository to review and test all basic redux functionality without react
